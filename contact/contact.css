@@ -1,0 +1,458 @@
+html {
+  font-size: 62.5%;
+  --main-color: #ebecf0;
+  --second-color: rgba(245, 108, 108, 0.7);
+  --title-color: #babecc;
+  --white: #ffffff;
+  --txt-color: #4d3252;
+  --neumorphism3d: -5px -5px 20px var(--white), 5px 5px 20px var(--title-color);
+  --neumorphism3d-hover: -2px -2px 5px var(--white),
+    2px 2px 5px var(--title-color);
+  --neumorphisme-hole: inset 2px 2px 5px var(--title-color),
+    inset -5px -5px 10px var(--white);
+  --neumorphisme-hole-inset: inset 1px 1px 2px var(--title-color),
+    inset -1px -1px 2px var(--white);
+  --text-shadow: -1px -1px 1px rgba(167, 167, 167, 0.3),
+    1px 1px 1px var(--white);
+  --icon-shadow: -1px -1px 1px rgba(46, 46, 46, 0.4), 1px 1px 1px var(--white);
+  --text-shadow-input: 1px 1px 1px var(--white);
+  --font-title: "Roboto", sans-serif;
+  --font-txt: "Open sans", sans-serif;
+  --font-hand: "Shadows Into Light", sans-serif;
+}
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--main-color);
+  font-family: var(--font-txt);
+  color: var(--txt-color);
+  text-shadow: var(--text-shadow);
+  max-width: 1920px;
+  min-width: 360px;
+  margin: 0 auto;
+  padding: 0 25px;
+  transition: all 0.3s ease-out;
+  letter-spacing: 1px;
+}
+header {
+  position: relative;
+  padding: 20px 0px;
+}
+/*-------------------------------NAVIGATION-------------------------------*/
+h2 {
+  font-size: 3rem;
+  align-self: flex-start;
+  font-family: var(--font-title);
+  color: var(--title-color);
+}
+h2 strong {
+  font-size: 2.8rem;
+  position: relative;
+  color: var(--second-color);
+}
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+ul {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  list-style: none;
+  height: 30vh;
+  width: 80%;
+  align-self: center;
+  margin-top: 15px;
+}
+ul::after {
+  content: "";
+  height: 2px;
+  width: 0%;
+  margin: 0 auto;
+  background-color: var(--second-color);
+  border-radius: 9999px;
+  box-shadow: var(--text-shadow);
+  animation: translate 1.5s forwards;
+}
+ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 25px;
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  background-color: var(--main-color);
+  transition: box-shadow 0.2s ease-in-out;
+}
+ul li a:hover {
+  color: var(--second-color);
+}
+#contact {
+  color: var(--second-color);
+}
+ul li a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-family: var(--font-title);
+  color: var(--txt-color);
+  transition: color 0.2s;
+}
+.nav-responsive {
+  height: 100%;
+}
+.ul-responsive {
+  display: flex;
+}
+/*-------------------------------MENU HAMBURGER-------------------------------*/
+.box-burger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top: 28px;
+  height: 60px;
+  width: 60px;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  background-color: var(--main-color);
+  box-shadow: var(--neumorphism3d);
+  border-radius: 10px;
+}
+#hamburger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  height: 34px;
+  width: 40px;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  border-radius: 10px;
+}
+.line {
+  position: absolute;
+  background-color: rgb(245, 108, 108);
+  box-shadow: var(--text-shadow);
+  height: 5px;
+  width: 100%;
+  border-radius: 9999px;
+  transition: all 0.5s ease-in-out;
+}
+.line:nth-child(1) {
+  top: 0px;
+}
+.line:nth-child(2) {
+  top: 14px;
+}
+.line:nth-child(3) {
+  top: 28px;
+}
+#hamburger.active .line:nth-child(1) {
+  top: 14px;
+  transform: rotate(135deg);
+  box-shadow: none;
+}
+#hamburger.active .line:nth-child(2) {
+  opacity: 0;
+  transform: translate(-20px);
+}
+#hamburger.active .line:nth-child(3) {
+  top: 14px;
+  transform: rotate(-135deg);
+  box-shadow: none;
+}
+.box-burger.active {
+  box-shadow: 0px 0px 0px 0px #fff9, 0px 0px 0px 0px #fff9,
+    0px 0px 0px 0px #0001, 0px 0px 0px 0px #0001, var(--neumorphisme-hole-inset);
+}
+/*-------------------------------SECTION FORMULAIRE-------------------------------*/
+#content {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  min-height: 700px;
+  height: auto;
+  margin: 0 auto;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 80px;
+}
+h3 {
+  font-size: 2.5rem;
+  font-family: var(--font-title);
+  color: var(--second-color);
+  margin: 20px 0;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 100%;
+  justify-content: space-between;
+  order: 2;
+  max-width: 700px;
+}
+form input {
+  height: 50px;
+  border-radius: 10px;
+  border: 0;
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+  background-color: var(--main-color);
+  box-shadow: var(--neumorphisme-hole);
+  outline: none;
+  padding: 20px;
+  font-family: var(--font-title);
+}
+form input::placeholder {
+  color: var(--title-color);
+  text-shadow: var(--text-shadow-input);
+  font-size: 1.5rem;
+  font-family: var(--font-title);
+}
+form input:focus {
+  box-shadow: inset 1px 1px 2px var(--title-color),
+    inset -1px -1px 2px var(--white);
+  color: var(--txt-color);
+  text-shadow: var(--text-shadow);
+}
+#request {
+  resize: none;
+  border-radius: 10px;
+  width: 100%;
+  padding: 20px;
+  border: none;
+  background-color: var(--main-color);
+  box-shadow: var(--neumorphisme-hole);
+  outline: none;
+  font-family: var(--font-title);
+  transition: all 0.2s ease-in-out;
+}
+#request::placeholder {
+  color: var(--title-color);
+  text-shadow: var(--text-shadow-input);
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+}
+#request:focus {
+  box-shadow: inset 1px 1px 2px var(--title-color),
+    inset -1px -1px 2px var(--white);
+  color: var(--txt-color);
+  text-shadow: var(--text-shadow);
+}
+form button {
+  align-self: flex-end;
+  padding: 20px 30px;
+  width: 40%;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.5rem;
+  font-family: var(--font-title);
+  color: var(--txt-color);
+  text-shadow: var(--text-shadow);
+  cursor: pointer;
+  background-color: var(--main-color);
+  box-shadow: var(--neumorphism3d);
+  transition: all 0.2s ease-in-out;
+}
+form button:hover {
+  box-shadow: var(--neumorphism3d-hover);
+  color: var(--second-color);
+}
+/*------------------------------- COORDONEES -------------------------------*/
+.contact-information {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  order: -1;
+}
+.contact-information p {
+  text-align: justify;
+  font-size: 1.4rem;
+  line-height: 25px;
+}
+/*-------------------------------FOOTER-------------------------------*/
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: var(--font-title);
+  min-height: 75px;
+  height: 20vh;
+}
+#legal-notice {
+  color: var(--second-color);
+}
+.logo-social {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 50%;
+}
+.logo-social i {
+  font-size: 2rem;
+  color: var(--title-color);
+  transition: all 0.4s;
+  width: 100%;
+  margin-top: 10px;
+  text-shadow: var(--icon-shadow);
+}
+.logo-social i:hover {
+  transform: scale(1.4, 1.4);
+}
+/*-------------------------------   Keyframes -------------------------------*/
+@keyframes translate {
+  100% {
+    width: 100%;
+  }
+}
+/*-------------------------------   RESPONSIVE MOBILE TO DESKTOP  -------------------------------*/
+@media screen and (min-width: 500px) {
+  .form {
+    margin-top: 0;
+  }
+}
+@media screen and (min-width: 650px) {
+  #content {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 815px) {
+  .box-burger {
+    display: none;
+  }
+  nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  #content {
+    padding-top: 0;
+    height: 100vh;
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 60%;
+    height: 100%;
+    margin: 0;
+  }
+  ul::after {
+    display: none;
+  }
+  ul li {
+    width: 30%;
+    box-shadow: var(--neumorphism3d);
+    transition: box-shadow 0.2s ease-in-out;
+  }
+  ul li:hover {
+    box-shadow: var(--neumorphism3d-hover);
+  }
+  ul li:nth-child(3) {
+    box-shadow: var(--neumorphism3d-hover);
+  }
+  footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    height: 10vh;
+    width: 100%;
+    font-size: 1.3rem;
+  }
+  .social {
+    flex-direction: row;
+    width: 100%;
+  }
+  .logo-social {
+    width: 50%;
+  }
+  .logo-social i {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 900px) {
+  header {
+    height: 15vh;
+  }
+  #content {
+    flex-direction: row;
+    width: 100%;
+    height: 75vh;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding-top: 50px;
+  }
+  .form {
+    margin: 0;
+  }
+  .contact-information {
+    order: 1;
+    width: 40%;
+    height: 80%;
+    justify-content: flex-start;
+  }
+  .form {
+    width: 40%;
+    height: 80%;
+  }
+  footer {
+    height: 10vh;
+  }
+}
+@media screen and (min-width: 1000px) {
+  body {
+    padding: 0 75px;
+  }
+  ul {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1500px) {
+  body {
+    padding: 0 150px;
+  }
+}
+@media screen and (min-width: 1800px) {
+  body {
+    padding: 0 200px;
+  }
+}
+@media screen and (min-width: 2000px) {
+  html {
+    font-size: 80%;
+  }
+  body {
+    padding: 0 250px;
+  }
+  #content {
+    height: 75vh;
+  }
+}

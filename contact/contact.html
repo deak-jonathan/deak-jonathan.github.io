@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Page contenant mes coordonnées et le formulaire permettant de me contacter." />
+    <title>Deak Jonathan</title>
+    <link rel="stylesheet" href="contact.css" />
+    <link rel="icon" type="image/png" href="/asset/jd.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@400&family=Shadows+Into+Light&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!--***************************************** HEADER *************************************************-->
+    <header>
+      <nav>
+        <h2>Contact <br /><strong>Deak Jonathan</strong></h2>
+        <ul>
+          <li>
+            <a href="/index.html" id="cv" class="link">Curriculum Vitae</a>
+          </li>
+          <li>
+            <a href="/portfolio/portfolio.html" id="portfolio" class="link"
+              >Portfolio</a
+            >
+          </li>
+          <li>
+            <a href="/contact/contact.html" id="contact" class="link"
+              >Contact</a
+            >
+          </li>
+        </ul>
+        <div class="box-burger">
+          <div id="hamburger" role="button">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!--***************************************** CONTENT *************************************************-->
+    <section id="content">
+      <div class="form">
+        <h3>Me contacter</h3>
+        <form action="#">
+          <input
+            type="text"
+            name="name"
+            placeholder="Nom"
+            class="input"
+            required
+            autofocus
+          />
+          <input
+            type="text"
+            name="email"
+            placeholder="Email"
+            class="input"
+            required
+          />
+          <textarea
+            name="request"
+            id="request"
+            cols="30"
+            rows="10"
+            required
+            placeholder="Votre demande"
+            class="input"
+          ></textarea>
+          <button type="submit" id="btn">Demander</button>
+        </form>
+      </div>
+      <div class="contact-information">
+        <h3>Mes coordonées</h3>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero esse
+          officia provident vero at eos. Voluptatem nihil nesciunt molestiae
+          fugiat, facilis inventore fuga impedit corporis voluptates sint sed
+          aliquid ea quo laborum dignissimos optio. Facere odit aspernatur
+          inventore recusandae voluptate molestiae dolores dolorem porro fugiat
+          impedit nisi temporibus reiciendis dolore sunt quidem omnis qui
+          commodi, nostrum quae ipsam numquam dicta debitis. Sapiente quam,
+          repudiandae magni ipsam modi adipisci ex aliquid soluta tempore
+          aperiam dolorum dolorem dolore eos maiores molestiae beatae deserunt
+          praesentium veritatis exercitationem explicabo. Dignissimos et ut quia
+          ipsam autem nisi omnis commodi. Maiores, pariatur? Deleniti asperiores
+          ducimus voluptates?
+        </p>
+      </div>
+    </section>
+    <!--***************************************** FOOTER *************************************************-->
+    <footer>
+      <p class="copy">Deak Jonathan &copy; <span id="year"></span></p>
+      <a href="/mentionLegal/mention.html" id="legal-notice"
+        >Mentions légales</a
+      >
+      <div class="social">
+        <p>Suivez-moi :</p>
+        <div class="logo-social">
+          <a href="#"><i class="fab fa-twitter media"></i></a>
+          <a href="#"><i class="fab fa-instagram media"></i></a>
+          <a href="#"><i class="fab fa-linkedin media"></i></a>
+          <a href="https://github.com/deak-jonathan" target="_blank"><i class="fab fa-github media"></i></a>
+        </div>
+      </div>
+    </footer>
+    <!--***************************************** JAVASCRIPT *************************************************-->
+    <script src="contact.js"></script>
+    <script src="/main.js"></script>
+    <script
+      src="https://kit.fontawesome.com/7579eef61b.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
