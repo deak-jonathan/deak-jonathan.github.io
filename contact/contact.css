@@ -212,6 +212,7 @@ form {
 form input {
   height: 50px;
   border-radius: 10px;
+  margin-bottom: 15px;
   border: 0;
   width: 100%;
   transition: all 0.2s ease-in-out;
@@ -236,6 +237,7 @@ form input:focus {
 #request {
   resize: none;
   border-radius: 10px;
+  margin-bottom: 15px;
   width: 100%;
   padding: 20px;
   border: none;
